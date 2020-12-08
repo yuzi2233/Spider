@@ -1,11 +1,6 @@
 import json
-
 import requests
 from bs4 import BeautifulSoup
-import re
-import os
-
-
 def get_temperature(ul):
     response = requests.get(ul)
     html = response.text
