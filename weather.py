@@ -50,3 +50,6 @@ if __name__ == '__main__':
         with open(r"data.json", 'w') as fw:
             json.dump(setting, fw)
 
+
+    print("I like IoT!")
+
