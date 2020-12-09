@@ -18,7 +18,7 @@ def get_temperature(ul):
         max1 = int(max.split('℃')[0])
         min1 = int(min.split('℃')[0])
 
-        data = atag[0].string.replace(' ', '').replace('\n', '').replace('\r', '')
+        data = atag[0].string.replace(' ', '').replace('\n', '').replace('\r', '').replace('年', '-').replace('月', '-').replace('日', '')
         print(data + ':' + '最低气温' + min + '  最高气温' + max)
         print()
         print('=' * 30)
@@ -26,7 +26,7 @@ def get_temperature(ul):
             "date": data,
             "maxtem": max1,
             "mintem": min1,
-            "avetem": (min1 + max1) / 2
+            "avetem": int((min1 + max1) / 2)
         }
         monthTem.append(test_dict)
 
