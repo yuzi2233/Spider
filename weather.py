@@ -36,10 +36,10 @@ def get_temperature(ul):
 if __name__ == '__main__':
     ul = 'http://www.tianqihoubao.com/lishi/beijing/month/'
     s = '201101'
-    f = open(r"data.json", encoding='UTF-8')  # 设置以utf-8解码模式读取文件，encoding参数必须设置，否则默认以gbk模式读取文件，当文件中包含中文时，会报错
-    setting = json.load(f)
-    thisyear = []
+
+    setting = []
     for year in range(9):  # 每年
+        thisyear = []
         for month in range(12):  # 每月
             url = ul + s + '.html'
             thisMonth = get_temperature(url)
@@ -47,8 +47,8 @@ if __name__ == '__main__':
             s = str(int(s) + 1)
         s = str(int(s) + 88)
         setting.append(thisyear)
-        with open(r"data.json", 'w') as fw:
-            json.dump(setting, fw)
+    with open(r"data.json", 'w') as fw:
+        json.dump(setting, fw)
 
 
     print("I like IoT!")
